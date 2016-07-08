@@ -5,6 +5,10 @@ header {
   width: 100%;
 }
 
+select {
+  color: #333366;
+}
+
 section {
   height: 40vh;
   width: 100%;
@@ -31,6 +35,29 @@ section {
   text-align: center;
   position: relative;
   top: 5vh;
+}
+
+.input-field label {
+     color: #333366;
+   }
+
+.input-field input[type=text]:focus + label {
+  color: #5c6bc0;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #5c6bc0;
+  box-shadow: 0 1px 0 0 #5c6bc0;
+}
+
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #5c6bc0;
+  box-shadow: 0 1px 0 0 #5c6bc0;
+}
+
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #ef5350;
+  box-shadow: 0 1px 0 0 #ef5350;
 }
 
 .left {
