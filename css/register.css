@@ -48,6 +48,11 @@ section {
   width: 779px;
 }
 
+.modal {
+    font-family: 'Avenir';
+}
+
+
 @media only screen and (min-width: 600px) and (max-width: 790px) {
 
   .btn-large {
