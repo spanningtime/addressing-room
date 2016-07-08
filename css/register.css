@@ -87,6 +87,7 @@ section {
     height: 204px;
     top: 15vh;
     width: 390px;
+    left: 10px;
   }
 
   .left, .right {
