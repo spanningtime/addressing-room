@@ -1,0 +1,43 @@
+.left {
+  text-align: right;
+}
+
+header {
+  background-image: URL('../images/paper.jpg');
+  height: 60vh;
+  position: relative;
+  width: 100%;
+}
+
+section {
+  height: 40vh;
+  width: 100%;
+}
+
+.btn-large {
+  background-color: #5c6bc0;
+  font-size: 1.3em;
+  height: 80px;
+  line-height: 80px;
+  position: relative;
+  top: 15vh;
+  width: 220px;
+}
+
+.btn-large:hover {
+  background-color: #9fa8da;
+}
+
+@media (max-width: 600px) {
+
+  .btn-large {
+    margin: 10px 0;
+    position: relative;
+    top: 5vh;
+  }
+
+  .left, .right {
+    text-align: center;
+  }
+
+}
