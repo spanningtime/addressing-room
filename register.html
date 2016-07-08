@@ -42,14 +42,14 @@
 
     <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Create your Addressing Room Account</h4>
+      <h4 class="center-align">Create your<br>Addressing Room Account</h4>
 
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6 offset-s1">
-              <input placeholder="you@example.com" id="first_name" type="text" class="validate">
-              <label for="first_name">Email</label>
+            <div class="input-field col s9 offset-s1">
+              <input placeholder="you@example.com" id="email" type="text" class="validate">
+              <label for="email">Email</label>
             </div>
           </div>
         </form>
@@ -58,9 +58,68 @@
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6 offset-s1">
-              <input placeholder="must be at least 8 charachters long" id="first_name" type="text" class="validate">
-              <label for="first_name">Password</label>
+            <div class="input-field col s9 offset-s1">
+              <input placeholder="must be at least 8 charachters long" id="password" type="text" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s9 offset-s1">
+              <input id="name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s9 offset-s1">
+              <input id="address_1" type="text" class="validate">
+              <label for="address_1">Address 1</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s9 offset-s1">
+              <input id="address_2" type="text" class="validate">
+              <label for="address_2">Address 2</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <form class="col s4 offset-s1">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="city" type="text" class="validate">
+              <label for="city">City</label>
+            </div>
+          </div>
+        </form>
+
+        <div class="input-field col s2">
+          <select id="states">
+            <option value="" disabled selected>State</option>
+          </select>
+        </div>
+
+        <form class="col s4">
+          <div class="row">
+            <div class="input-field col s9">
+              <input id="zip" type="text" class="validate">
+              <label for="zip">Zip Code</label>
             </div>
           </div>
         </form>
