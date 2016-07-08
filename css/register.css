@@ -1,7 +1,3 @@
-.left {
-  text-align: right;
-}
-
 header {
   background-image: URL('../images/paper.jpg');
   height: 60vh;
@@ -16,11 +12,12 @@ section {
 
 .btn-large {
   background-color: #5c6bc0;
-  font-size: 1.3em;
+  font-family: 'Courier New';
+  font-size: 1.1em;
   height: 80px;
   line-height: 80px;
   position: relative;
-  top: 15vh;
+  top: 5vh;
   width: 220px;
 }
 
@@ -28,12 +25,83 @@ section {
   background-color: #9fa8da;
 }
 
-@media (max-width: 600px) {
+.description {
+  color: #333366;
+  font-family: 'Avenir';
+  text-align: center;
+  position: relative;
+  top: 5vh;
+}
+
+.left {
+  text-align: right;
+}
+
+.logo {
+  background-image: URL('../images/logo.png');
+  background-repeat: no-repeat;
+  display: block;
+  height: 306px;
+  margin: 0 auto;
+  position: relative;
+  top: 10vh;
+  width: 779px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 790px) {
 
   .btn-large {
     margin: 10px 0;
-    position: relative;
+  }
+
+  .logo {
+    background-image: URL('../images/logo_med.png');
+    height: 230px;
+    top: 8vh;
+    width: 585px;
+  }
+
+  .left {
+    text-align: right;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .btn-large {
+    font-size: 0.9em;
+    line-height: 80px;
+    margin: 10px 0;
     top: 5vh;
+    width: 180px;
+  }
+
+  .logo {
+    background-image: URL('../images/logo_small.png');
+    height: 153px;
+    top: 18vh;
+    width: 390px;
+  }
+
+  .left, .right {
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width: 415px) {
+
+  h4 {
+    font-size: 1.8em;
+  }
+
+  .btn-large {
+    top: 1vh;
+  }
+
+  .description {
+    top: 2vh;
   }
 
   .left, .right {
