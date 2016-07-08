@@ -104,6 +104,7 @@ section {
 
   .btn-large {
     top: 1vh;
+    width: 190px;
   }
 
   .description {
