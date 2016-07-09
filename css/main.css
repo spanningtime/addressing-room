@@ -1,0 +1,23 @@
+nav {
+  background-image: URL('../images/paper.jpg');
+  display: block;
+  height: 156px;
+}
+
+nav ul a {
+  color: #333366;
+  font-family: 'Courier New';
+  font-size: 1.5rem;
+  margin: 50px 20px 0 0;
+}
+
+.brand-logo {
+  margin: 10px 0 0 35px;
+}
+
+.logo {
+  background-image: URL('../images/logo_extra_small.png');
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 300px;
+}
