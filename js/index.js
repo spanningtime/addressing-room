@@ -14,3 +14,18 @@ $('.modal-trigger').click(function() {
   }
   $('select').material_select();
 });
+
+var api_key = 'key-f740d2cbc40cb72e3c00dc229d3ee613';
+var domain = 'www.bryanbrophy.com';
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+
+var data = {
+  from: 'postmaster@www.bryanbrophy.com',
+  to: USEREMAIL,
+  subject: 'Welcome to Addressing Room',
+  text: 'Thank you for registering for Addressing Room! You can now start adding some websites that you keep your address on and we\'ll help you keep them up to date!'
+};
+
+mailgun.messages().send(data, function (error, body) {
+  console.log(body);
+});
