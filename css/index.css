@@ -31,7 +31,7 @@ section {
   line-height: 80px;
   position: relative;
   top: 5vh;
-  width: 220px;
+  width: 225px;
 }
 
 .btn-large:hover {
@@ -123,11 +123,11 @@ section {
 
   .btn-large {
     font-size: 0.9em;
-    height: 60px;
+    height: 63px;
     line-height: 63px;
     margin: 10px 0;
     top: 5vh;
-    width: 180px;
+    width: 190px;
   }
 
   .logo {
