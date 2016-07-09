@@ -18,13 +18,8 @@ nav ul a {
   width: 150px;
 }
 
-.congrats {
-  color: #808085;
-  font-family: 'Avenier';
-  font-size: 1.3rem;
-  position: relative;
-  text-align: center;
-  top: 100px;
+.brand-logo {
+  margin: 7px 0 0 40px;
 }
 
 .dropdown-button {
@@ -37,14 +32,27 @@ nav ul a {
 }
 
 .dropdown-content li>a, .dropdown-content li>span {
-  color: #333366;
+  color: #5c6bc0;
   font-family: 'Courier New';
   font-size: 1.5rem;
   text-align: center;
 }
 
-.brand-logo {
-  margin: 7px 0 0 40px;
+.header {
+  border-bottom: 1px solid #5c6bc0;
+  color: #5c6bc0;
+  font-family: 'Courier New';
+  position: relative;
+  top: 100px;
+}
+
+.instruct {
+  color: #808085;
+  font-family: 'Avenier';
+  font-size: 1.3rem;
+  position: relative;
+  text-align: center;
+  top: 110px;
 }
 
 .logo {
@@ -54,10 +62,7 @@ nav ul a {
   width: 300px;
 }
 
-.to_update {
-  border-bottom: 1px solid #5c6bc0;
-  color: #5c6bc0;
-  font-family: 'Courier New';
+.nudge_left{
+  left: 24px;
   position: relative;
-  top: 100px;
 }
