@@ -6,3 +6,49 @@
 h4 {
   color: #333366;
 }
+
+.btn-large {
+  background-color: #5c6bc0;
+  font-family: 'Courier New';
+  font-size: 1.1em;
+  height: 80px;
+  line-height: 80px;
+  margin: 0 0 15px 15px;
+  position: relative;
+  top: 5vh;
+  width: 175px;
+}
+
+.btn-large:hover {
+  background-color: #9fa8da;
+}
+
+/* --- medium screen --- */
+@media only screen and (max-width: 600px) {
+
+  .btn-large {
+    line-height: 80px;
+    margin: 10px 0;
+    top: 5vh;
+    width: 175px;
+  }
+
+  h4 {
+    font-size: 1.8em;
+  }
+}
+
+/* --- small screen --- */
+@media only screen and (max-width: 415px) {
+
+  h4 {
+    font-size: 1.6em;
+  }
+
+  .btn-large {
+    top: 1vh;
+    width: 190px;
+    margin-bottom: 15px
+  }
+
+}
