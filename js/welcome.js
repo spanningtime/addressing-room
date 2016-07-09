@@ -1,7 +1,7 @@
 
 
 
-var recs = ['Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank', 'Bank of America'];
+var recs = ['Allstate', 'Amazon', 'AT&T', 'BECU', 'Comcast', 'Ebay', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank', 'Bank of America', 'Seattle City Light', 'The Seattle Times', 'University of Washington'];
 var i = 1;
 
 $(document).ready(function() {
