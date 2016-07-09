@@ -6,8 +6,10 @@ nav {
 nav ul a {
   color: #333366;
   font-family: 'Courier New';
-  font-size: 1.5rem;
-  margin: 50px 20px 0 0;
+  font-size: 1.49rem;
+  margin: 50px 20px 0 -19px;
+  text-align: center;
+  width: 150px;
 }
 
 .dropdown-button {
@@ -15,7 +17,7 @@ nav ul a {
   font-family: 'Courier New';
   font-size: 1.5rem;
   position: relative;
-  top: 100px;
+  top: 120px;
   width: 150px;
 }
 
@@ -26,14 +28,8 @@ nav ul a {
   text-align: center;
 }
 
-.test {
-  background-color: #333366;
-  height: 400px;
-  width: 400px;
-}
-
 .brand-logo {
-  margin: 10px 0 0 35px;
+  margin: 7px 0 0 40px;
 }
 
 .logo {

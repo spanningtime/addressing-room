@@ -37,6 +37,13 @@ section {
   top: 5vh;
 }
 
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #333366;
+  font-family: 'Courier New';
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 .input-field label {
      color: #333366;
    }
