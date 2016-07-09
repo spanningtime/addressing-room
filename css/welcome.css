@@ -65,6 +65,14 @@ input.select-dropdown,
   margin-bottom: 60px;
 }
 
+.select-border {
+  border: 2px solid #039be5;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
 
@@ -77,6 +85,11 @@ input.select-dropdown,
 
   h4 {
     font-size: 1.8em;
+  }
+
+  img {
+    height: 15px;
+    width: 50%;
   }
 }
 

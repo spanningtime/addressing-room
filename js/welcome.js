@@ -11,3 +11,7 @@ $(document).ready(function() {
   }
   $('select').material_select();
 });
+
+$('img').click(function(event) {
+  $(event.target).toggleClass("select-border")
+});
