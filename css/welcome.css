@@ -1,14 +1,15 @@
 #welcome-header {
+  color: #333366;
   font-family: Cutive Mono;
-  /*font-weight: bold;*/
   font-size: 6vw;
   text-align: center;
 }
 
 h4 {
   color: #333366;
-  font-family: 'Avenir'
+  font-family: 'Avenir';
   font-weight: 100;
+  text-align: center
 }
 
 .btn-large {
