@@ -44,19 +44,14 @@ input.select-dropdown,
   font-family: 'Avenir'
 }
 
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #5c6bc0;
+  border-bottom: 2px solid #5c6bc0;
+}
+
 .input-field {
   margin-top: 40px;
 }
-
-/*.recommended-dropdown {
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  width: 500px;
-  border: 2px solid #5c6bc0;
-  background-color: #ffffff;
-  font-color: #5c6bc0
-}*/
 
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
