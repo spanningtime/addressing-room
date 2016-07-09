@@ -39,6 +39,10 @@ h4 {
   color: #5c6bc0;
 }
 
+input.select-dropdown {
+  text-align: center;
+}
+
 input.select-dropdown,
 .dropdown-content li>span {
   font-family: 'Avenir'
