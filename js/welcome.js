@@ -14,4 +14,7 @@ $(document).ready(function() {
 
 $('img').click(function(event) {
   $(event.target).toggleClass("select-border")
+  if ($("select-border")) {
+    $("input[type='checkbox']").val("on");
+  }
 });
