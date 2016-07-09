@@ -1,10 +1,14 @@
 #welcome-header {
-  font-size: 10vw;
+  font-family: Cutive Mono;
+  /*font-weight: bold;*/
+  font-size: 6vw;
   text-align: center;
 }
 
 h4 {
   color: #333366;
+  font-family: 'Avenir'
+  font-weight: 100;
 }
 
 .btn-large {
@@ -19,9 +23,40 @@ h4 {
   width: 175px;
 }
 
+.left {
+  text-align: right
+}
+
 .btn-large:hover {
   background-color: #9fa8da;
 }
+
+.btn {
+  color: #5c6bc0
+}
+
+.dropdown-content li>span {
+  color: #5c6bc0;
+}
+
+input.select-dropdown,
+.dropdown-content li>span {
+  font-family: 'Avenir'
+}
+
+.input-field {
+  margin-top: 40px;
+}
+
+/*.recommended-dropdown {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 500px;
+  border: 2px solid #5c6bc0;
+  background-color: #ffffff;
+  font-color: #5c6bc0
+}*/
 
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
@@ -30,7 +65,7 @@ h4 {
     line-height: 80px;
     margin: 10px 0;
     top: 5vh;
-    width: 175px;
+    width: 165px;
   }
 
   h4 {
@@ -41,6 +76,10 @@ h4 {
 /* --- small screen --- */
 @media only screen and (max-width: 415px) {
 
+  #welcome-header {
+    font-size: 1.9em
+  }
+
   h4 {
     font-size: 1.6em;
   }
@@ -49,6 +88,11 @@ h4 {
     top: 1vh;
     width: 190px;
     margin-bottom: 15px
+  }
+
+  .left,
+  .right {
+    text-align: center;
   }
 
 }

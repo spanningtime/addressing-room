@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome</title>
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+
     <link href="//fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
 
     <!--Import materialize.css-->
@@ -15,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <header id="welcome-header">Welcome</header>
+    <header id="welcome-header">Welcome to Addressing Room</header>
 
     <section>
       <div class="row">
@@ -84,13 +86,21 @@
     </section>
 
     <div class="row">
-      <div class="col s8 offset-s2">
-        <div class="row">
-          <div class="col s12 right-align">
-                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">S k i p</a>
-                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal2">S a v e</a>
-          </div>
+      <div class="col s8 offset-s4">
+        <div class="input-field col s12 m6 l6">
+          <select id="recs" multiple>
+            <option value="" disabled selected>Click here to select more websites</option>
+          </select>
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6 l6 left">
+        <a class="waves-effect waves-light btn-large" href="#">S k i p</a>
+      </div>
+      <div class="col s12 m6 l6 right">
+        <a class="waves-effect waves-light btn-large" href="#">S a v e</a>
       </div>
     </div>
 
