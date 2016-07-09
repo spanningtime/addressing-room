@@ -57,6 +57,14 @@ input.select-dropdown,
   margin-top: 40px;
 }
 
+.top {
+  margin-bottom: 60px;
+}
+
+.middle {
+  margin-bottom: 60px;
+}
+
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
 
