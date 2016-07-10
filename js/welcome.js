@@ -12,6 +12,7 @@ $(document).ready(function() {
   $('select').material_select();
 });
 
+
 $('img').click(function(event) {
   var $idOfElement = $('li span input:first-child').eq(this.id);
   $(event.target).toggleClass("select-border");
@@ -22,3 +23,10 @@ $('img').click(function(event) {
     $idOfElement.attr('checked', false);
   }
 });
+
+// overide checkbox selection input to only display "More websites"
+$(document).ready(function() {
+  $('li').click(function() {
+    $('input').eq(0).val("More websites");
+  });  
+})

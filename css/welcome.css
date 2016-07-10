@@ -1,6 +1,6 @@
 #welcome-header {
   color: #333366;
-  font-family: Cutive Mono;
+  font-family: 'Courier New';
   font-size: 6vw;
   text-align: center;
 }
@@ -42,11 +42,17 @@ h4 {
 
 input.select-dropdown {
   text-align: center;
+  font-size: 2rem;
 }
 
 input.select-dropdown,
 .dropdown-content li>span {
-  font-family: 'Avenir'
+  font-family: 'Courier New';
+  font-size: 1.5rem
+}
+
+.select-wrapper input.select-dropdown {
+  font-size: 2rem;
 }
 
 [type="checkbox"]:checked+label:before {
