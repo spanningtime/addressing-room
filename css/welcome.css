@@ -1,14 +1,8 @@
-#welcome-header {
-  color: #333366;
-  font-family: 'Courier New';
-  font-size: 6vw;
-  text-align: center;
-}
-
 h4 {
   color: #333366;
   font-family: 'Avenir';
   font-weight: 100;
+  padding-top: 40px;
   text-align: center
 }
 
