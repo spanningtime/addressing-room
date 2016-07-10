@@ -13,6 +13,12 @@ $(document).ready(function() {
 });
 
 $('img').click(function(event) {
+  var $idOfElement = $('li span input:first-child').eq(this.id);
   $(event.target).toggleClass("select-border");
-  $('li span input:first-child').eq(this.id).attr('checked', true);
+  if ($(event.target).hasClass("select-border")) {
+    $idOfElement.attr('checked', true);
+  }
+  else {
+    $idOfElement.attr('checked', false);
+  }
 });
