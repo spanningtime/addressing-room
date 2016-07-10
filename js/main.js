@@ -7,4 +7,9 @@ $('.dropdown-button').dropdown({
       belowOrigin: true, // Displays dropdown below the button
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
-  );
+);
+
+$('.modal-trigger').leanModal({
+  dismissible: true,
+  opacity: .2
+});

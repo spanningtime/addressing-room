@@ -50,7 +50,7 @@
 
     <section class="row  instruct">
       <div class="col s12">
-        <p>Congratulations! Your address is up to date on all your sites. You sure are organized and responsible!</p>
+        <a class="modal-trigger" href="#modal1"><p>Congratulations! Your address is up to date on all your sites. You sure are organized and responsible!</p></a>
       </div>
     </section>
 
@@ -69,25 +69,29 @@
 
   <div id="modal1" class="modal">
   <div class="modal-content">
-    <h4 class="center-align">Login to your<br>Addressing Room Account</h4>
+    <h4 class="center-align">How to change your<br>address at Amazon</h4>
 
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s12 m10 offset-m1">
-            <input id="emailLog" type="text" class="validate">
-            <label for="email">Email</label>
-          </div>
-        </div>
-      </form>
-    </div>
+          <div class="col s12 m10 offset-m1">
+            <ul>
+              <li>※ Navigate to <a href="http://www.amazon.com" target="_blank">www.amazon.com</a></li>
+              <li>※ Login to your user account</li>
+              <li>※ Click on "Your Account" in the navigation bar</li>
+              <li>※ Find the address book section and click "Manage Address Book"</li>
+              <li>※ Edit your old address or add a new one.</li>
+              <li>※ Give yourself a high five! You just changed your address at Amazon.</li>
+              <li class="right-align">
+                <form action="#">
+                  <p>
+                    <input type="checkbox" id="updated" />
+                    <label for="updated">Address Updated</label>
+                  </p>
+                </form>
+              </li>
+            </ul>
 
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12 m10 offset-m1">
-            <input id="passwordLog" type="text" class="validate">
-            <label for="password">Password</label>
           </div>
         </div>
       </form>
@@ -96,7 +100,7 @@
   </div>
   <div class="modal-footer">
     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
   </div>
 </div>
 

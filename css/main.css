@@ -1,6 +1,28 @@
+a {
+  color: #333366;
+  text-decoration: none;
+}
+
+form {
+  position: relative;
+  top: 25px;
+}
+
+h4 {
+  color: #333366;
+  font-family: 'Courier New';
+}
+
 h5 {
   display: inline-block;
   font-size: 1.3rem;
+}
+
+li {
+  color: #333366;
+  font-family: 'Avenier';
+  font-size: 1.3rem;
+  line-height: 43px;
 }
 
 nav {
@@ -16,6 +38,11 @@ nav ul a {
   margin: 50px 20px 0 -19px;
   text-align: center;
   width: 150px;
+}
+
+p, form {
+  display: inline-block;
+  font-family: 'Courier New';
 }
 
 .brand-logo {
@@ -47,7 +74,7 @@ nav ul a {
 }
 
 .instruct {
-  color: #808085;
+  color: #333366;
   font-family: 'Avenier';
   font-size: 1.3rem;
   position: relative;
@@ -62,7 +89,17 @@ nav ul a {
   width: 300px;
 }
 
+.modal-footer {
+  bottom: 50px;
+  position: relative;
+}
+
 .nudge_left{
   left: 24px;
   position: relative;
+}
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #5c6bc0;
+  border-bottom: 2px solid #5c6bc0;
 }
