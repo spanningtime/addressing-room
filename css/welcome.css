@@ -12,6 +12,58 @@ h4 {
   text-align: center
 }
 
+nav {
+  background-color: white;
+  background-image: URL('../images/paper.jpg');
+  height: 90px;
+}
+
+nav ul a {
+  color: #333366;
+  font-family: 'Courier New';
+  font-size: 1.39rem;
+  margin: 0 0 0 -20px;
+  text-align: center;
+  width: 160px;
+}
+
+.brand-logo {
+  margin: 4px 0 0 0;
+}
+
+.dropdown-button {
+  color: #5c6bc0;
+  font-family: 'Courier New';
+  font-size: 1.5rem;
+}
+
+.ddbtn1 {
+  margin: 25px 10px 0 0;
+  width: 150px;
+}
+
+.ddbtn2 {
+  position: relative;
+  top: 60px;
+  width: 150px;
+}
+
+
+.ddcont1 {
+  margin-top: 90px;
+}
+
+.ddcont2 {
+  margin-top: 40px;
+}
+
+.dropdown-content li>a, .dropdown-content li>span .ddcont1 {
+  color: #5c6bc0;
+  font-family: 'Courier New';
+  font-size: 1.5rem;
+  text-align: right;
+}
+
 .btn-large {
   background-color: #5c6bc0;
   font-family: 'Courier New';
@@ -26,6 +78,13 @@ h4 {
 
 .left {
   text-align: right
+}
+
+.logo {
+  background-image: URL('../images/logo_extra_small.png');
+  background-repeat: no-repeat;
+  height: 85px;
+  width: 160px;
 }
 
 .btn-large:hover {
