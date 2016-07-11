@@ -28,6 +28,10 @@ app.use(cookieSession({
   secret: process.env.SESSION_SECRET
 }));
 
+const users = require('./routes/users');
+
+app.use(users);
+
 app.use(express.static(path.join('public')));
 
 app.use((_req, res) => {
