@@ -4,6 +4,16 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
   });
 
+
+
+$('.add').click(function() {
+  var $urlInput = $('#url').children().eq(0);
+  var $websiteInput = $('#website-name').children().eq(0);
+  $('#added-site-list').append('<li>' + $websiteInput.val() + '<li>')
+  $websiteInput.val("");
+  $urlInput.val("");
+})
+
 var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
 var i = 1;
 
@@ -14,7 +24,6 @@ $(document).ready(function() {
   }
   $('select').material_select();
 });
-
 
 $('img').click(function(event) {
   var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
@@ -39,13 +48,9 @@ $(document).ready(function() {
   });
 })
 
-
-
 $('li').click(function(event) {
   console.log('hello world');
 });
-
-
 
 // overide checkbox selection input to only display "More websites"
 $(document).ready(function() {
