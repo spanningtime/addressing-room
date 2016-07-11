@@ -27,7 +27,6 @@ $(document).ready(function() {
 
 $('img').click(function(event) {
   var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
-  console.log(this.id);
   $(event.target).toggleClass("select-border");
   if ($(event.target).hasClass("select-border")) {
     $idOfElement.attr('checked', true);
@@ -40,7 +39,6 @@ $('img').click(function(event) {
 $(document).ready(function() {
   $('li').click(function(event) {
     for (var x = 0; x < recs.length; x++) {
-      console.log(x);
       if($(event.target).eq(0).text() === recs[x]) {
         $('#' + (x)).toggleClass('select-border');
       }
@@ -49,7 +47,6 @@ $(document).ready(function() {
 })
 
 $('li').click(function(event) {
-  console.log('hello world');
 });
 
 // overide checkbox selection input to only display "More websites"
