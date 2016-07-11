@@ -51,10 +51,16 @@ nav ul a {
   margin-top: 40px;
 }
 
-.dropdown-content li>a, .dropdown-content li>span .ddcont1 {
+.dropdown-content li>a, .dropdown-content li>span {
   color: #5c6bc0;
   font-family: 'Courier New';
   font-size: 1.5rem;
+  text-align: center;
+}
+
+.dropdown-content li>a, .dropdown-content li>span .ddcont1 {
+  right: 20px;
+  position: relative;
   text-align: right;
 }
 
