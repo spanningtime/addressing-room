@@ -93,6 +93,10 @@ nav ul a {
   color: #5c6bc0;
 }
 
+.responsive-img {
+  padding: 15px;
+}
+
 input.select-dropdown {
   text-align: center;
   font-size: 2rem;
@@ -127,8 +131,8 @@ input.select-dropdown,
 
 .select-border {
   border: 2px solid #039be5;
-  padding: 15px;
   border-radius: 10px;
+  padding: 13px;
 }
 
 
