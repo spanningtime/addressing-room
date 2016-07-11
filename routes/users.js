@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt-as-promised');
 
 router.post('/users', (req, res, next) => {
   const { email, password, name, address_1, address_2, city, state, zip } = req.body;
+
   knex('users')
     .select(knex.raw('1=1'))
     .where('email', req.body.email)
@@ -19,9 +20,10 @@ router.post('/users', (req, res, next) => {
           .send('Email already exists, Motherfucker.')
       }
 
-      bcrypt.hash(password, 12);
+      return bcrypt.hash(password, 12);
     })
     .then((hashed_password) => {
+      console.log(hashed_password);
       return knex('users').insert({
         email, hashed_password, name, address_1, address_2, city, state, zip
       });
