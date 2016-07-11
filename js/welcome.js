@@ -18,6 +18,7 @@ $(document).ready(function() {
 
 $('img').click(function(event) {
   var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
+  console.log(this.id);
   $(event.target).toggleClass("select-border");
   if ($(event.target).hasClass("select-border")) {
     $idOfElement.attr('checked', true);
@@ -49,6 +50,6 @@ $('li').click(function(event) {
 // overide checkbox selection input to only display "More websites"
 $(document).ready(function() {
   $('li').click(function() {
-    $('input').eq(0).val("more websites");
+    $('.more').children().children(0).eq(1).val("more");
   });
 })

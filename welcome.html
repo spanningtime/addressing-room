@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Welcome</title>
 
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"   media="screen,projection"/>
@@ -15,6 +15,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <body>
     <header class="navbar-fixed">
     <nav>
@@ -33,16 +34,29 @@
     </nav>
   </header>
 
-  <!-- <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a> -->
-
   <!-- Modal Structure -->
   <div id="modal-sites" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Add/Remove Sites From Your Account</h4>
     </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <i class="material-icons">add</i>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Save</a>
     </div>
   </div>
 
@@ -116,7 +130,7 @@
 
     <div class="row">
       <div class="col s12 m12 offset-m3 l12 offset-l3">
-        <div class="input-field col s12 m6 l6">
+        <div class="more input-field col s12 m6 l6">
           <select id="recs" multiple>
             <option value="" disabled selected>more </option>
           </select>
