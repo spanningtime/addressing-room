@@ -56,17 +56,12 @@ nav ul a {
   margin-top: 40px;
 }
 
-.dropdown-content li>a, .dropdown-content li>span {
+
+.dropdown-content li>a, .dropdown-content li>span .ddcont1 {
   color: #5c6bc0;
   font-family: 'Courier New';
   font-size: 1.5rem;
   text-align: center;
-}
-
-.dropdown-content li>a, .dropdown-content li>span .ddcont1 {
-  right: 20px;
-  position: relative;
-  text-align: right;
 }
 
 .btn-large {
@@ -148,6 +143,13 @@ input.select-dropdown,
 
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
+
+  .dropdown-content li>a, .dropdown-content li>span .ddcont2 {
+    color: #5c6bc0;
+    font-family: 'Courier New';
+    font-size: 1.5rem;
+    text-align: right;
+  }
 
   .btn-large {
     line-height: 80px;
