@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  knex.schema.createTable('sites', (table) => {
+  return knex.schema.createTable('sites', (table) => {
     table.increments();
     table.string('url')
       .notNullable()
@@ -19,5 +19,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  knex.schema.dropTable('sites');
+  return knex.schema.dropTable('sites');
 };
