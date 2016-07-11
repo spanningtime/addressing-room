@@ -21,6 +21,11 @@ nav ul a {
   width: 160px;
 }
 
+.add {
+  position: absolute;
+  margin: 15px 0 0 25px
+}
+
 .brand-logo {
   margin: 4px 0 0 0;
 }
@@ -130,8 +135,6 @@ input.select-dropdown,
   padding: 15px;
   border-radius: 10px;
 }
-
-
 
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
