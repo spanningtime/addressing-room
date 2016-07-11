@@ -2,6 +2,9 @@
 exports.up = function(knex) {
   return knex.schema.createTable('sites', (table) => {
     table.increments();
+    table.string('website_name')
+      .notNullable()
+      .defaultTo('')
     table.string('url')
       .notNullable()
       .defaultTo('');
