@@ -30,9 +30,11 @@ app.use(cookieSession({
 
 const users = require('./routes/users');
 const session = require('./routes/session');
+const sites = require('./routes/sites');
 
 app.use(users);
 app.use(session);
+app.use(sites);
 
 app.use(express.static(path.join('public')));
 
