@@ -141,6 +141,11 @@ input.select-dropdown,
   padding: 13px;
 }
 
+.site-li {
+  font-family: 'Avenir';
+  font-size: 20px;
+}
+
 /* --- medium screen --- */
 @media only screen and (max-width: 600px) {
 

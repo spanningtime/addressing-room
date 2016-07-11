@@ -9,7 +9,7 @@ $(document).ready(function(){
 $('.add').click(function() {
   var $urlInput = $('#url').children().eq(0);
   var $websiteInput = $('#website-name').children().eq(0);
-  $('#added-site-list').append('<li>' + $websiteInput.val() + '<li>')
+  $('#added-site-list').append('<li class="site-li">' + $websiteInput.val() + '<li>')
   $websiteInput.val("");
   $urlInput.val("");
 })
