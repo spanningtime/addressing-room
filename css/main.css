@@ -44,6 +44,10 @@ p, form {
   font-family: 'Courier New';
 }
 
+select {
+  color: #333366;
+}
+
 .brand-logo {
   margin: 4px 0 0 0;
 }
@@ -103,11 +107,44 @@ p, form {
   top: 110px;
 }
 
+.input-field label {
+    color: #333366;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #5c6bc0;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #5c6bc0;
+  box-shadow: 0 1px 0 0 #5c6bc0;
+}
+
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #5c6bc0;
+  box-shadow: 0 1px 0 0 #5c6bc0;
+}
+
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #ef5350;
+  box-shadow: 0 1px 0 0 #ef5350;
+}
+
+.select-wrapper .select-dropdown {
+  position: relative;
+  top: 20px;
+}
+
 .logo {
   background-image: URL('../images/logo_extra_small.png');
   background-repeat: no-repeat;
   height: 85px;
   width: 160px;
+}
+
+.modal {
+  color: #333366;
+  font-family: 'Avenir';
 }
 
 .modal-footer {

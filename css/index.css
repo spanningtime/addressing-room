@@ -52,8 +52,8 @@ section {
 }
 
 .input-field label {
-     color: #333366;
-   }
+    color: #333366;
+}
 
 .input-field input[type=text]:focus + label {
   color: #5c6bc0;
