@@ -7,7 +7,7 @@ exports.up = function(knex) {
       .defaultTo('');
     table.text('instructions')
       .notNullable()
-      .defaultTo('Hey! It looks like you added this site on your own. We\'re working on finding instructions to help you in the future.');
+      .defaultTo('Hey! It looks like you added this site on your own. We are working on finding instructions to help you in the future.');
     table.string('img_url')
       .notNullable()
       .defaultTo('');
