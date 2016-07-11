@@ -24,7 +24,7 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cookieSession({
-  name: 'bookshelf',
+  name: 'addressing_room',
   secret: process.env.SESSION_SECRET
 }));
 
