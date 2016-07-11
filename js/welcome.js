@@ -1,5 +1,8 @@
 
-
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
 
 var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
 var i = 1;
@@ -15,7 +18,6 @@ $(document).ready(function() {
 
 $('img').click(function(event) {
   var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
-  console.log(this.id);
   $(event.target).toggleClass("select-border");
   if ($(event.target).hasClass("select-border")) {
     $idOfElement.attr('checked', true);
