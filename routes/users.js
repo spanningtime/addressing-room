@@ -35,16 +35,16 @@ router.post('/users', ev(validations.post), (req, res, next) => {
       console.log(hashed_password);
       return knex('users').insert({
         email, hashed_password, name, address_1, address_2, city, state, zip
-      });
+      }, '*');
     })
-    .then(() => {
+    .then((usersInserted) => {
       const mailgun = new Mailgun({apiKey: api_key, domain: domain});
 
       const data = {
         from: from_who,
         to: email,
         subject: 'Welcome to Addressing Room',
-        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You are a true soldier, and we salute you, dawg.\n\nHugs and Kisses...\n\n From ya boiyz at Addressing Room`
+        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You are a true soldier, and we salute you, dawg.\n\nHugs and Kisses...\nFrom ya boiyz at Addressing Room`
       };
 
       mailgun.messages().send(data, (err, body) => {
@@ -54,7 +54,9 @@ router.post('/users', ev(validations.post), (req, res, next) => {
 
         console.log(body);
       });
-
+      console.log(usersInserted);
+      req.session.userId = usersInserted[0].id;
+      res.cookie('loggedIn', true);
       res.sendStatus(200);
     })
     .catch((err) => {

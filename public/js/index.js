@@ -49,7 +49,8 @@ var registerAjax = function() {
   });
 };
 
-$('#register').click(function() {
+$('#register').click(function(event) {
+  event.preventDefault();
   registerAjax();
 });
 
