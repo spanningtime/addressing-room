@@ -4,8 +4,6 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
   });
 
-
-
 $('.add').click(function() {
   var $urlInput = $('#url').children().eq(0);
   var $websiteInput = $('#website-name').children().eq(0);
@@ -55,3 +53,26 @@ $(document).ready(function() {
     $('.more').children().children(0).eq(1).val("more");
   });
 })
+
+var logOutAjax = function() {
+  var $xhr = $.ajax({
+    method: 'DELETE',
+    url: '/session'
+  });
+
+  $xhr.done(function() {
+    window.location.href = '/index.html';
+  });
+
+  $xhr.fail(function() {
+    console.log('Session Ended');
+  });
+};
+
+$('#logOutLarge').click(function() {
+  logOutAjax();
+});
+
+$('#logOutSmall').click(function() {
+  logOutAjax();
+});

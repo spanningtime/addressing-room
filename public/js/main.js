@@ -24,3 +24,26 @@ $('.modal-trigger').click(function() {
   }
   $('select').material_select();
 });
+
+var logOutAjax = function() {
+  var $xhr = $.ajax({
+    method: 'DELETE',
+    url: '/session'
+  });
+
+  $xhr.done(function() {
+    window.location.href = '/index.html';
+  });
+
+  $xhr.fail(function() {
+    console.log('Session Ended');
+  });
+};
+
+$('#logOutLarge').click(function() {
+  logOutAjax();
+});
+
+$('#logOutSmall').click(function() {
+  logOutAjax();
+});
