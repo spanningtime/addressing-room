@@ -24,7 +24,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
     .then((exists) => {
       if (exists) {
         return res
-          .status(400)
+          .status(409)
           .set('Content-Type', 'text/plain')
           .send('Email already exists, Motherfucker.')
       }
@@ -44,7 +44,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         from: from_who,
         to: email,
         subject: 'Welcome to Addressing Room',
-        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You can now add all the websites that you are a member of that keep track of your address to your use profile.\n\nDon't worry if you can't remember them all off the top of your head. We'll help you remember them all and we'll help you keep them all up to date!`
+        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You are a true soldier, and we salute you, dawg.\n\nHugs and Kisses...\n\n From ya boiyz at Addressing Room`
       };
 
       mailgun.messages().send(data, (err, body) => {
