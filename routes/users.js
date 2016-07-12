@@ -2,15 +2,19 @@
 
 const express = require('express');
 const router = express.Router();
+
 const knex = require('../knex');
 const bcrypt = require('bcrypt-as-promised');
 
-router.post('/users', (req, res, next) => {
+const ev = require('express-validation');
+const validations = require('../validations/users');
+
+router.post('/users', ev(validations.post), (req, res, next) => {
   const { email, password, name, address_1, address_2, city, state, zip } = req.body;
 
   knex('users')
     .select(knex.raw('1=1'))
-    .where('email', req.body.email)
+    .where('email', email)
     .first()
     .then((exists) => {
       if (exists) {
