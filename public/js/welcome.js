@@ -1,3 +1,25 @@
+(function() {
+  'use strict';
+
+
+})();
+
+  window.COOKIES = {};
+  document.cookie.split('; ').forEach((prop) => {
+    const propKey = prop.split('=')[0];
+    const propValue = prop.split('=')[1];
+
+    window.COOKIES[propKey] = propValue;
+  });
+
+  if(!window.COOKIES.loggedIn) {
+    window.location.href = '/index.html';
+  }
+
+  if (!window.COOKIES.firstTime) {
+    window.location.href = '/main.html';
+  }
+
 
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
