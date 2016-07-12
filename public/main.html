@@ -24,7 +24,7 @@
           <a class="dropdown-button ddbtn1 btn-flat" href="#" data-activates="dropdown1">MENU</a>
 
           <ul id="dropdown1" class="dropdown-content ddcont1 z-depth-0">
-            <li><a href="#!">SITES</a></li>
+            <li><a class="modal-trigger" href="#modal-sites">SITES</a></li>
             <li><a class="modal-trigger" href="#modal1">PROFILE</a></li>
             <li><a id="logOutLarge" href="">LOG OUT</a></li>
           </ul>
@@ -32,8 +32,6 @@
       </div>
     </nav>
   </header>
-
-
 
   <div class="row">
     <div class="col s12 center-align hide-on-large-only">
@@ -151,6 +149,35 @@
   <div class="modal-footer">
     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
     <a href="" class="waves-effect waves-green btn-flat">Update</a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal-sites" class="modal">
+
+  <div class="modal-content">
+    <h4>Add/Remove Sites From Your Account</h4>
+  </div>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div id="website-name" class="input-field col s5 offset-s1 web-name">
+          <input type="text" class="validate">
+          <label for="website_name">Website Name</label>
+        </div>
+        <div id="url" class="input-field col s5 url">
+          <input placeholder="Example: www.google.com" type="text" class="validate"><i class="add material-icons col s2 right-align">add</i>
+          <label for="url">URL</label>
+        </div>
+      </div>
+    </form>
+    <ul class="col s12 offset-s1" id="added-site-list"></ul>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
   </div>
 </div>
 
