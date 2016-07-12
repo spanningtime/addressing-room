@@ -44,7 +44,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         from: from_who,
         to: email,
         subject: 'Welcome to Addressing Room',
-        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You are a true soldier, and we salute you, dawg.\n\nHugs and Kisses...\nFrom ya boiyz at Addressing Room`
+        text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You are a true soldier, and we salute you, dawg.\n\nHugs and Kisses...\nLove, Ya Boiyz at Addressing Room HQ (member FDIC)`
       };
 
       mailgun.messages().send(data, (err, body) => {
