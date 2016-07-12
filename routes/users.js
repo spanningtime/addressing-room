@@ -47,7 +47,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         text: `Hey, ${name}!\n\nThank you for registering for Addressing Room! You can now add all the websites that you are a member of that keep track of your address to your use profile.\n\nDon't worry if you can't remember them all off the top of your head. We'll help you remember them all and we'll help you keep them all up to date!`
       };
 
-      mailgun.messages().send(data, function (err, body) {
+      mailgun.messages().send(data, (err, body) => {
         if (err) {
           throw err;
         }
