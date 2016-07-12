@@ -49,9 +49,47 @@ var registerAjax = function() {
   });
 };
 
-$('#register').click(function(event) {
-  event.preventDefault();
-
-  console.log('Hello Pepe!');
+$('#register').click(function() {
   registerAjax();
+});
+
+var loginAjax = function() {
+  var dataLogin = {
+    email: $('#emailLog').val(),
+    password: $('#passwordLog').val()
+  };
+
+  var $xhr = $.ajax({
+    method: 'POST',
+    url: '/session',
+    contentType: 'application/json',
+    data: JSON.stringify(dataLogin)
+  });
+
+  $xhr.done(function() {
+    window.location.href = '/main.html';
+  });
+
+  $xhr.fail(function() {
+    Materialize.toast('Login information is invalid.', 3000);
+  });
+};
+
+$('#login').click(function() {
+  var email = $('#emailLog').val().trim();
+  var password = $('#passwordLog').val();
+
+  if(!email) {
+    return Materialize.toast('Please enter an email.', 2000);
+  }
+
+  if (email.indexOf('@') < 0) {
+    return Materialize.toast('Please enter a valid email.', 2000);
+  }
+
+  if (!password) {
+    return Materialize.toast('Please enter a password', 2000);
+  }
+
+  loginAjax();
 });
