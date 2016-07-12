@@ -51,7 +51,6 @@
     });
 
     $xhr.done(function() {
-      document.cookie = 'firstTime';
       window.location.href = '/welcome.html';
     });
 

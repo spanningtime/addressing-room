@@ -62,6 +62,7 @@ router.post('/session', (req, res, next) => {
 router.delete('/session', (req, res) => {
   delete req.session.userId;
   res.clearCookie('loggedIn');
+  res.clearCookie('firstTime');
   res.sendStatus(200);
 });
 
