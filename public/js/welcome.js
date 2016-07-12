@@ -13,9 +13,9 @@
     window.location.href = '/index.html';
   }
 
-  if (!window.COOKIES.firstTime) {
-    window.location.href = '/main.html';
-  }
+  // if (!window.COOKIES.firstTime) {
+  //   window.location.href = '/main.html';
+  // }
 
 
   $(document).ready(function(){
