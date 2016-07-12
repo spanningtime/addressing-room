@@ -31,10 +31,12 @@ app.use(cookieSession({
 const users = require('./routes/users');
 const session = require('./routes/session');
 const sites = require('./routes/sites');
+const memberships = require('./routes/memberships');
 
 app.use(users);
 app.use(session);
 app.use(sites);
+app.use(memberships);
 
 app.use(express.static(path.join('public')));
 
@@ -45,8 +47,12 @@ app.use((_req, res) => {
 // eslint-disable-next-line max-params
 app.use((err, _req, res, _next) => {
   if (err.status) {
-    return res.status(err.status).send(err);
+    return res
+      .status(err.status)
+      .set('Content-Type', 'text/plain')
+      .send(err.message);
   }
+
   // eslint-disable-next-line no-console
   console.error(err.stack);
   res.sendStatus(500);
