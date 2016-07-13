@@ -23,7 +23,6 @@
     $('.modal-trigger').leanModal();
   });
 
-<<<<<<< 3f82845ad2bcb3ab3e34f406707e257f4d3d740c
   $('.add').click(function() {
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
@@ -67,6 +66,7 @@ $('#save').click(function() {
       selectedRecs.push($('span').eq(x).text())
     };
   };
+  console.log(selectedRecs);
 });
 
 $(document).ready(function() {
@@ -75,17 +75,6 @@ $(document).ready(function() {
     i++
   }
   $('select').material_select();
-});
-
-$('img').click(function(event) {
-  var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
-  $(event.target).toggleClass("select-border");
-  if ($(event.target).hasClass("select-border")) {
-    $idOfElement.attr('checked', true);
-  }
-  else {
-    $idOfElement.attr('checked', false);
-  }
 });
 
   $('img').click(function(event) {
@@ -114,6 +103,7 @@ $(document).ready(function() {
   $('li').click(function() {
     $('#dropdownLabel').children().children().eq(1).val("more");
   });
+});
 
   // overide checkbox selection input to only display "More websites"
   $(document).ready(function() {
@@ -121,6 +111,7 @@ $(document).ready(function() {
       $('.more').children().children(0).eq(1).val("more");
     });
   });
+
 
   var logOutAjax = function() {
     var $xhr = $.ajax({
@@ -148,5 +139,4 @@ $(document).ready(function() {
   $('#skip').click(function() {
     document.cookie = 'firstTime=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   });
-
 })();
