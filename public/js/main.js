@@ -83,13 +83,14 @@
 
       for (var membership of memberships) {
         if (!membership.is_upToDate) {
-          $('#readyToUpdate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td></tr>');
+          $('#readyToUpdate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td><td class="center"><a href="#modal3" class="modal-trigger waves-effect waves-blue btn-floating btn-flat">→</a></td></tr>');
         }
 
         if (membership.is_upToDate) {
           $('#upToDate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td></tr>');
         }
       }
+      $(".modal-trigger").leanModal();
     });
 
     $xhr.fail(function() {

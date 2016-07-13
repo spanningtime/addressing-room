@@ -68,8 +68,18 @@ table, .up-to-date {
 td {
   width: 500px;
 }
+
 .brand-logo {
   margin: 4px 0 0 0;
+}
+
+.btn-floating {
+  color: #333366;
+}
+
+.btn-floating:hover {
+  background-color: rgba(92, 107, 192, 0.6);
+  color: white;
 }
 
 .dropdown-button {
