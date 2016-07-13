@@ -58,14 +58,11 @@ table, .up-to-date {
   color: #474784;
   font-family: 'Avenir';
   font-size: 1.2rem;
-  left: 0px;
   margin: 0 0 50px 0;
-  position: relative;
-  top: 100px;
 }
 
 td {
-  width: 100px;
+  width: 500px;
 }
 .brand-logo {
   margin: 4px 0 0 0;
