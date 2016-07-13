@@ -32,7 +32,7 @@
   $('.add').click(function() {
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
-    $('#sites-modal-table').append('<tr><td class="site-td center">' + $websiteInput.val() + '</td>' + '<td class="site-td center">' + $urlInput.val() + '</td></tr>');
+    $('#sites-modal-table').append('<tr><td class="site-td">' + $websiteInput.val() + '</td>' + '<td class="site-td">' + $urlInput.val() + '</td></tr>');
     $websiteInput.val("");
     $urlInput.val("");
   })

@@ -152,11 +152,11 @@
       <form class="col s12">
         <div class="row">
           <div id="website-name" class="input-field col s5 offset-s1 web-name">
-            <input type="text" class="validate">
+            <input placeholder="Example: Bank of America" type="text" class="validate">
             <label for="website_name">Website Name</label>
           </div>
           <div id="url" class="input-field col s5 url">
-            <input placeholder="Example: www.google.com" type="text" class="validate"><i class="add material-icons col s2 right-align">add</i>
+            <input placeholder="Example: www.bankofamerica.com" type="text" class="validate"><i class="add material-icons col s2 right-align">add</i>
             <label for="url">URL</label>
           </div>
         </div>
@@ -165,12 +165,12 @@
     </div>
 
     <!-- name/url table for sites modal -->
-    <div>
-      <table>
+
+      <table class="sites-modal-table bordered">
         <thead>
           <tr>
-            <th class="center" data-field="name">Name</th>
-            <th class="center" data-field="url">URL</th>
+            <th>Your Sites</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="sites-modal-table">
@@ -178,7 +178,6 @@
          </tr>
         </tbody>
       </table>
-    </div>
 
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
