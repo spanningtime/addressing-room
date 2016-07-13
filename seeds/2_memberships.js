@@ -8,9 +8,38 @@ exports.seed = function(knex) {
           id: 1,
           user_id: 1,
           site_id: 1,
-          created_at: new Date('2016-06-29 14:26:16 UTC'),
-          updated_at: new Date('2016-06-29 14:26:16 UTC')
-        }]);
+        },
+        {
+          id: 2,
+          user_id: 1,
+          site_id: 2,
+        },
+        {
+          id: 3,
+          user_id: 1,
+          site_id: 3,
+        },
+        {
+          id: 4,
+          user_id: 1,
+          site_id: 4,
+        },
+        {
+          id: 5,
+          user_id: 2,
+          site_id: 2,
+        },
+        {
+          id: 6,
+          user_id: 2,
+          site_id: 5,
+        },
+        {
+          id: 7,
+          user_id: 2,
+          site_id: 10,
+        },
+      ])
     })
     .then(() => {
       return knex.raw(
