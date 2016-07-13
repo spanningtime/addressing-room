@@ -67,4 +67,35 @@
   $('#logOutSmall').click(function() {
     logOutAjax();
   });
+
+  var checkSiteStatus = function() {
+    var $xhr = $.ajax({
+      method: 'GET',
+      url: '/users/sites'
+    });
+
+    $xhr.done(function(memberships) {
+      if (memberships.length < 1) {
+        $('.firstSection').append(
+          '<div class="col s12"><p>Add some sites that you keep your address on<br> and we\'ll help you keep them up to date!</p></div>'
+        );
+      }
+
+      for (var membership of memberships) {
+        if (!membership.is_upToDate) {
+          $('#readyToUpdate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td></tr>');
+        }
+
+        if (membership.is_upToDate) {
+          $('#upToDate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td></tr>');
+        }
+      }
+    });
+
+    $xhr.fail(function() {
+      $('.firstSection').append('<div class="col s12"><p>There was an error retrieving your website memberships.<br> Please refresh your page to try again.</p></div>');
+    });
+  };
+
+  checkSiteStatus();
 })();
