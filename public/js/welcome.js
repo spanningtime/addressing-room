@@ -50,7 +50,6 @@
       sitesInfo.url = $('.site-td-url').eq(x).text();
       addedSites.push(sitesInfo);
     }
-    console.log(addedSites);Ma
   })
 
 
