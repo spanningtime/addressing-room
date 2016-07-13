@@ -29,13 +29,27 @@
     $('.modal-trigger').leanModal();
   });
 
+
   $('.add').click(function() {
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
-    $('#sites-modal-table').append('<tr><td class="site-td">' + $websiteInput.val() + '</td>' + '<td class="site-td">' + $urlInput.val() + '</td></tr>');
+    $('#sites-modal-table').append('<tr><td class="site-td-name">' + $websiteInput.val() + '</td>' + '<td class="site-td-url">' + $urlInput.val() + '</td></tr>');
     $websiteInput.val("");
     $urlInput.val("");
   })
+
+  var addedSites = [];
+
+  $('#sites-modal-save').click(function() {
+    for (var x = 0; x < $('#sites-modal-table tr').length; x++) {
+      var sitesInfo = {}
+      sitesInfo.name = $('.site-td-name').eq(x).text();
+      sitesInfo.url = $('.site-td-url').eq(x).text();
+      addedSites.push(sitesInfo);
+    }
+    console.log(addedSites);
+  })
+
 
   var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
   var i = 1;
@@ -48,25 +62,10 @@
     $('select').material_select();
   });
 
-$('.add').click(function() {
-  var $urlInput = $('#url').children().eq(0);
-  var $websiteInput = $('#website-name').children().eq(0);
-  $('#added-site-list').append('<li class="site-li">' + $websiteInput.val() + '<li>')
-  $websiteInput.val("");
-  $urlInput.val("");
-});
-
-
-var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
-var i = 1;
-
-// get text value of recs dropdown
-// $('.recInput').eq(0).text()
-// get checked value of recs dropdown
-// $('input:checked').eq(0).val()
 
 var selectedRecs = []
 
+/* --- Welcome page save click -- */
 $('#save').click(function() {
   for (var x = 4; x < $('span').length; x++) {
     if ($('span').eq(x).children().eq(0).is(':checked')) {
