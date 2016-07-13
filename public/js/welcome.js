@@ -23,6 +23,7 @@
     $('.modal-trigger').leanModal();
   });
 
+<<<<<<< 3f82845ad2bcb3ab3e34f406707e257f4d3d740c
   $('.add').click(function() {
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
@@ -41,6 +42,51 @@
     }
     $('select').material_select();
   });
+
+$('.add').click(function() {
+  var $urlInput = $('#url').children().eq(0);
+  var $websiteInput = $('#website-name').children().eq(0);
+  $('#added-site-list').append('<li class="site-li">' + $websiteInput.val() + '<li>')
+  $websiteInput.val("");
+  $urlInput.val("");
+});
+
+var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
+var i = 1;
+
+// get text value of recs dropdown
+// $('.recInput').eq(0).text()
+// get checked value of recs dropdown
+// $('input:checked').eq(0).val()
+
+var selectedRecs = []
+
+$('#save').click(function() {
+  for (var x = 4; x < $('span').length; x++) {
+    if ($('span').eq(x).children().eq(0).is(':checked')) {
+      selectedRecs.push($('span').eq(x).text())
+    };
+  };
+});
+
+$(document).ready(function() {
+  for (var rec of recs) {
+    $('#recs').append('<option class="recInput" value="' + i + '">' + rec + '</>')
+    i++
+  }
+  $('select').material_select();
+});
+
+$('img').click(function(event) {
+  var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
+  $(event.target).toggleClass("select-border");
+  if ($(event.target).hasClass("select-border")) {
+    $idOfElement.attr('checked', true);
+  }
+  else {
+    $idOfElement.attr('checked', false);
+  }
+});
 
   $('img').click(function(event) {
     var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
