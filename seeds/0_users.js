@@ -36,6 +36,17 @@ exports.seed = function(knex) {
       state: 'VA',
       zip: 'GINAS ARE COOL'
       },
+      {
+      id: 4,
+      email: 'pepe@vulva.com',
+      hashed_password: '$2a$12$z2HyMsznYz4L6ZSXE1UPweAmDMh6Mvi/Jsm1WEKfEOBxq9rHwOx9G',
+      name: 'Dr. Pepe esq.',
+      address_1: '9393 Stethoscope Place',
+      address_2: '# 1',
+      city: 'Hololulu',
+      state: 'HI',
+      zip: '95942'
+      }
     ])
   })
   .then(() => {

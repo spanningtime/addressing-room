@@ -14,9 +14,6 @@ exports.up = function(knex) {
     table.string('img_url')
       .notNullable()
       .defaultTo('');
-    table.boolean('is_upToDate')
-      .notNullable()
-      .defaultTo(false)
     table.timestamps(true, true);
   })
 };

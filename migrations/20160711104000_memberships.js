@@ -15,6 +15,9 @@ exports.up = function(knex) {
       .inTable('sites')
       .onDelete('CASCADE')
       .index();
+    table.boolean('is_upToDate')
+      .notNullable()
+      .defaultTo(false);
     table.timestamps(true, true);
   });
 };
