@@ -57,6 +57,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
       console.log(usersInserted);
       req.session.userId = usersInserted[0].id;
       res.cookie('firstTime', true);
+      res.cookie('userName', name);
       res.cookie('loggedIn', true);
       res.sendStatus(200);
     })
