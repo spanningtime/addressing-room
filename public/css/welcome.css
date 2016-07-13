@@ -168,6 +168,10 @@ input[type=text] {
   margin-bottom: 60px;
 }
 
+.rec-img {
+  cursor: pointer;
+}
+
 .select-border {
   border: 2px solid #039be5;
   border-radius: 10px;

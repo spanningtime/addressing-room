@@ -29,8 +29,11 @@
     $('.modal-trigger').leanModal();
   });
 
+  var $sitesModalTable = $('.sites-modal-table');
+  $sitesModalTable.hide();
 
   $('.add').click(function() {
+    $sitesModalTable.show();
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
     $('#sites-modal-table').append('<tr><td class="site-td-name">' + $websiteInput.val() + '</td>' + '<td class="site-td-url">' + $urlInput.val() + '</td></tr>');
