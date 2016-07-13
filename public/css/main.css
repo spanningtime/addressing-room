@@ -10,12 +10,16 @@ form {
 
 h4 {
   color: #333366;
-  font-family: 'Courier New';
+  font-family: 'Avenir';
 }
 
 h5 {
   display: inline-block;
   font-size: 1.3rem;
+}
+
+.hello {
+  font-family: 'Courier New';
 }
 
 li {
@@ -33,7 +37,7 @@ nav {
 
 nav ul a {
   color: #333366;
-  font-family: 'Courier New';
+  font-family: 'Avenir';
   font-size: 1.39rem;
   text-align: center;
   width: 160px;
@@ -41,7 +45,7 @@ nav ul a {
 
 p, form {
   display: inline-block;
-  font-family: 'Courier New';
+  font-family: 'Avenir';
 }
 
 p, .instruct {

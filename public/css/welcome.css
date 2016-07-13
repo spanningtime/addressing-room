@@ -139,7 +139,7 @@ input.select-dropdown,
 }
 
 .input-field label {
-  color: #5c6bc0;
+  color: #333366;
 }
 
 .input-field input[type=text]:focus + label {

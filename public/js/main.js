@@ -15,9 +15,9 @@
 
   var userName = window.COOKIES.userName;
 
-  $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down">HELLO ' + userName.toUpperCase() + '</h4>');
+  $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down hello">HELLO ' + userName.toUpperCase() + '</h4>');
 
-  $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only">HELLO ' + userName.toUpperCase() + '</h4>');
+  $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only hello">HELLO ' + userName.toUpperCase() + '</h4>');
 
   $('.dropdown-button').dropdown({
     inDuration: 300,
