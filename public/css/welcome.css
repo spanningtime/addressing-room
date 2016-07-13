@@ -121,11 +121,16 @@ input.select-dropdown,
 }
 
 .select-wrapper input.select-dropdown {
+  font-size: 1rem;
+}
+
+/* --- Dropdown label text size --- */
+.butts input[value]{
   font-size: 2rem;
 }
 
-.select-wrapper input.select-dropdown .modal-select {
-  font-size: 2rem;
+.select-wrapper input.select-dropdown .states {
+  font-size: 1rem;
 }
 
 
