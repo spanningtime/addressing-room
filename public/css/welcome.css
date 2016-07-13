@@ -43,7 +43,8 @@ nav ul a {
 
 .ddbtn2 {
   position: relative;
-  top: 60px;
+  right: 5px;
+  top: -10px;
   width: 150px;
 }
 
@@ -144,6 +145,19 @@ input.select-dropdown,
 .site-li {
   font-family: 'Avenir';
   font-size: 20px;
+}
+
+.user {
+  color: #5c6bc0 !important;
+  font-family: 'Courier New';
+  font-size: 1.5rem !important;
+  margin: 35px 0 0 30px;
+}
+
+.userSm {
+  position: relative;
+  right: 18px;
+  top: -20px;
 }
 
 /* --- medium screen --- */

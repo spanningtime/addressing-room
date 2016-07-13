@@ -46,6 +46,7 @@ router.post('/session', (req, res, next) => {
     .then(() => {
       req.session.userId = user.id;
       res.cookie('loggedIn', true);
+      res.cookie('userName', user.name);
       res.sendStatus(200);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
