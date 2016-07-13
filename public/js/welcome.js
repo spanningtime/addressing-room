@@ -32,7 +32,7 @@
   $('.add').click(function() {
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
-    $('#added-site-list').append('<li class="site-li">' + $websiteInput.val() + '<li>')
+    $('#sites-modal-table').append('<tr><td class="site-td">' + $websiteInput.val() + '</td>' + '<td>' + $urlInput.val() + '</td></tr>');
     $websiteInput.val("");
     $urlInput.val("");
   })
@@ -55,6 +55,7 @@ $('.add').click(function() {
   $websiteInput.val("");
   $urlInput.val("");
 });
+
 
 var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
 var i = 1;
