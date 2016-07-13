@@ -66,13 +66,12 @@
 var selectedRecs = []
 
 /* --- Welcome page save click -- */
-$('#save').click(function() {
+$('#next').click(function() {
   for (var x = 4; x < $('span').length; x++) {
     if ($('span').eq(x).children().eq(0).is(':checked')) {
       selectedRecs.push($('span').eq(x).text())
     };
   };
-  console.log(selectedRecs);
 });
 
 $(document).ready(function() {
