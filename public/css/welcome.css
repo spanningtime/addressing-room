@@ -23,7 +23,8 @@ nav ul a {
 
 .add {
   position: absolute;
-  margin: 15px 0 0 25px
+  margin: 15px 0 0 25px;
+  cursor: pointer;
 }
 
 .brand-logo {
