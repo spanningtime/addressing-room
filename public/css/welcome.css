@@ -142,9 +142,13 @@ input.select-dropdown,
   padding: 13px;
 }
 
-.site-li {
+.site-td {
   font-family: 'Avenir';
   font-size: 20px;
+}
+
+table {
+  width: 500px;
 }
 
 .user {
