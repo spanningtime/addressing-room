@@ -106,16 +106,9 @@ $(document).ready(function() {
 // overide checkbox selection input to only display "More websites"
 $(document).ready(function() {
   $('li').click(function() {
-    $('#dropdownLabel').children().children().eq(1).val("more");
+    $('#dropdownLabel').children().children().eq(1).val("Click here for more options");
   });
 });
-
-  // overide checkbox selection input to only display "More websites"
-  $(document).ready(function() {
-    $('li').click(function() {
-      $('.more').children().children(0).eq(1).val("more");
-    });
-  });
 
 
   var logOutAjax = function() {

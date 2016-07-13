@@ -101,6 +101,10 @@ nav ul a {
   color: #5c6bc0;
 }
 
+form {
+  font-family: "Avenir"
+}
+
 .responsive-img {
   padding: 15px;
 }
@@ -112,7 +116,7 @@ input.select-dropdown {
 
 input.select-dropdown,
 .dropdown-content li>span {
-  font-family: 'Courier New';
+  font-family: 'Avenir';
   font-size: 1.5rem
 }
 
@@ -187,6 +191,12 @@ table,
   width: 600px;
 }
 
+th {
+  font-family: "Avenir";
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
 .user {
   color: #5c6bc0 !important;
   font-family: 'Courier New';
@@ -205,7 +215,7 @@ table,
 
   .dropdown-content li>a, .dropdown-content li>span .ddcont2 {
     color: #5c6bc0;
-    font-family: 'Courier New';
+    font-family: 'Avenir';
     font-size: 1.5rem;
     text-align: right;
   }
