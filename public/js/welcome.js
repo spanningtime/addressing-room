@@ -181,14 +181,6 @@ $('#next').click(function() {
   getSitesAjax();
 });
 
-$(document).ready(function() {
-  for (var rec of recs) {
-    $('#recs').append('<option class="recInput" value="' + i + '">' + rec + '</>')
-    i++
-  }
-  $('select').material_select();
-});
-
   $('img').click(function(event) {
     var $idOfElement = $('li span input:first-child').eq(Number.parseInt(this.id) + 1);
     $(event.target).toggleClass("select-border");
