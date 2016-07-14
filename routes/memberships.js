@@ -18,26 +18,14 @@ const checkAuth = function(req, res, next) {
   next();
 };
 
-router.post('/memberships/:siteId', checkAuth, (req, res, next) => {
+router.post('/memberships', checkAuth, (req, res, next) => {
   const user_id = req.body.user_id;
   const website_id = req.body.website_id;
 
-  knex('sites')
-    .where('id', website_id)
+  knex('memberships')
+    .where('user_id', user_id)
+    .where('site_id', website_id)
     .first()
-    .then((site) => {
-      if (!site) {
-        const err = new Error('Invalid site Id');
-        err.statusCode = 400;
-
-        throw err;
-      }
-
-      return knex('memberships')
-        .where('user_id', user_id)
-        .where('website_id', website_id)
-        .first();
-    })
     .then((membership) => {
       if (membership) {
         const err = new Error('Duplicate membership');
@@ -49,7 +37,7 @@ router.post('/memberships/:siteId', checkAuth, (req, res, next) => {
       return knex('memberships')
         .insert({
           user_id: user_id,
-          website_id: website_id
+          site_id: website_id
         }, '*');
     })
     .then((memberships) => {

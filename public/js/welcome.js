@@ -66,14 +66,12 @@
     for (var siteId of siteIds) {
       var dataNewMembership = {
         user_id: userId,
-        site_id: siteId
+        website_id: siteId
       };
-
-      var websiteString = '/memberships/' + siteId;
 
       var $xhr = $.ajax ({
         method:'POST',
-        url: websiteString,
+        url: '/memberships',
         contentType: 'application/json',
         data: JSON.stringify(dataNewMembership)
       });
@@ -82,8 +80,8 @@
         console.log(siteIds);
       });
 
-      $xhr.fail(function() {
-        console.log('fail');
+      $xhr.fail(function(err) {
+        console.log(err);
       });
     };
   };
