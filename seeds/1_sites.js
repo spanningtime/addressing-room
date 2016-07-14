@@ -47,7 +47,7 @@ exports.seed = function(knex) {
       },
       {
       id: 8,
-      website_name: 'KeyBank',
+      website_name: 'Key Bank',
       url: 'www.key.com'
       },
       {
@@ -83,6 +83,11 @@ exports.seed = function(knex) {
       id: 14,
       website_name: "Bank of America",
       url: 'www.bankofamerica.com'
+      },
+      {
+      id: 15,
+      website_name: "Wells Fargo",
+      url: 'www.wellsfargo.com'
       }
     ])
   })
