@@ -31,6 +31,11 @@ nav ul a {
   margin: 4px 0 0 0;
 }
 
+.customDesc {
+    font-family: "Avenir";
+    color: #333366;
+}
+
 .dropdown-button {
   color: #5c6bc0;
   font-family: 'Courier New';
