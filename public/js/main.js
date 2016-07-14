@@ -81,7 +81,7 @@
   var checkSiteStatus = function() {
     var $xhr = $.ajax({
       method: 'GET',
-      url: '/users/sites'
+      url: '/memberships'
     });
 
     $xhr.done(function(memberships) {
@@ -104,7 +104,7 @@
         }
 
         if (membership.is_upToDate) {
-          $('#upToDate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td></tr>');
+          $('#upToDate').append('<tr><td class="center">' + membership.website_name + '</td><td class="center">' + membership.url + '</td><td class="center"><p>✓</p></td></tr>');
         }
       }
       $(".modal-trigger").leanModal();

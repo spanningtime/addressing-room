@@ -15,7 +15,7 @@ const checkAuth = function(req, res, next) {
   next();
 };
 
-router.post('/users/sites/:siteId', checkAuth, (req, res, next) => {
+router.post('/memberships/:siteId', checkAuth, (req, res, next) => {
   const userId = req.session.userId;
   const siteId = Number.parseInt(req.params.siteId);
 
@@ -77,10 +77,11 @@ router.patch('/memberships',  (req, res, next) => {
     });
 });
 
-router.get('/users/sites', checkAuth, (req, res, next) => {
+router.get('/memberships', checkAuth, (req, res, next) => {
   const userId = req.session.userId;
 
   knex('sites')
+    .orderBy('sites.website_name')
     .innerJoin('memberships', 'memberships.site_id', 'sites.id')
     .where('memberships.user_id', userId)
     .then((sites) => {
@@ -91,7 +92,7 @@ router.get('/users/sites', checkAuth, (req, res, next) => {
     });
 });
 
-router.get('/users/sites/:siteId', checkAuth, (req, res, next) => {
+router.get('/memberships/:siteId', checkAuth, (req, res, next) => {
   const userId = req.session.userId;
   const siteId = Number.parseInt(req.params.siteId);
 
@@ -114,7 +115,7 @@ router.get('/users/sites/:siteId', checkAuth, (req, res, next) => {
   });
 });
 
-router.delete('/users/sites/:siteId', checkAuth, (req, res, next) => {
+router.delete('/memberships/:siteId', checkAuth, (req, res, next) => {
   const userId = req.session.userId;
   const siteId = Number.parseInt(req.params.siteId);
 
