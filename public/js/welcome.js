@@ -22,12 +22,16 @@
 
   var selectedRecs = [];
   var siteIds = [];
+  var customSites = [];
 
   $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down">HELLO ' + userName.toUpperCase() + '</h4>');
 
   $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only">HELLO ' + userName.toUpperCase() + '</h4>');
 
   var getSitesAjax = function() {
+
+    var counter = 0;
+
     for (var rec of selectedRecs) {
       var dataRecSites = {
         website_name: rec
@@ -43,14 +47,19 @@
       });
 
       $xhr.done(function(site) {
+        counter += 1;
         siteIds.push(site.id)
-        postNewMembershipAjax();
+
+        if (counter === selectedRecs.length) {
+          postNewMembershipAjax();
+        }
       });
 
       $xhr.fail(function() {
         console.log("Whole Butt");
       })
     }
+    console.log(selectedRecs);
   };
 
   var postNewMembershipAjax = function() {
@@ -70,10 +79,16 @@
       });
 
       $xhr.done(function() {
-        console.log("done")
+        console.log(siteIds);
+      });
+
+      $xhr.fail(function() {
+        console.log('fail');
       });
     };
   };
+
+
 
 
   $(document).ready(function(){
