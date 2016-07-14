@@ -21,7 +21,7 @@
 
   var userName = window.COOKIES.userName;
 
-  $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down">' + userName.toUpperCase() + '</h4>');
+  $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down hello">' + userName.toUpperCase() + '</h4>');
 
   $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only hello">' + userName.toUpperCase() + '</h4>');
 
