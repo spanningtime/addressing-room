@@ -29,7 +29,6 @@
   $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only">' + userName.toUpperCase() + '</h4>');
 
   var getSitesAjax = function() {
-
     var counter = 0;
 
     for (var rec of selectedRecs) {
@@ -77,13 +76,43 @@
       });
 
       $xhr.done(function() {
-        console.log(siteIds);
+        siteIds = [];
       });
 
       $xhr.fail(function(err) {
         console.log(err);
       });
     };
+  };
+
+
+  var postCustomSitesAjax = function() {
+    var counter = 0;
+    for (var site of addedSites) {
+      var dataNewCustomSite = {
+        website_name: site.name,
+        url: site.url
+      };
+      var $xhr = $.ajax({
+        method: 'POST',
+        url: '/sites/',
+        contentType: 'application/json',
+        data: JSON.stringify(dataNewCustomSite)
+      });
+
+      $xhr.done(function(site) {
+        siteIds.push(site.id)
+        counter += 1;
+        if (counter = addedSites.length) {
+          postNewMembershipAjax();
+        }
+      });
+
+      $xhr.fail(function() {
+        console.log("fail");
+      });
+    };
+
   };
 
 
@@ -114,12 +143,18 @@
   var addedSites = [];
 
   $('#sites-modal-save').click(function() {
+    var counter = 0;
     for (var x = 0; x < $('#sites-modal-table tr').length; x++) {
       var sitesInfo = {}
       sitesInfo.name = $('.site-td-name').eq(x).text();
       sitesInfo.url = $('.site-td-url').eq(x).text();
       addedSites.push(sitesInfo);
+      counter += 1;
+      if (counter === $('#sites-modal-table tr').length) {
+        postCustomSitesAjax();
+      }
     }
+    console.log(addedSites);
   })
 
 
