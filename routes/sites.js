@@ -15,9 +15,9 @@ router.get('/sites', (req, res, next) => {
     });
 });
 
-router.get('/sites/:id', (req, res, next) => {
+router.get('/sites/:name', (req, res, next) => {
   knex('sites')
-    .where('id', Number.parseInt(req.params.id))
+    .where('website_name', req.params.name)
     .first()
     .then((site) => {
       if (!site) {
