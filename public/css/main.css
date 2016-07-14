@@ -63,6 +63,14 @@ table, .up-to-date {
   margin: 0 0 50px 0;
 }
 
+table,
+.sites-modal-table {
+  left: 108px;
+  position: relative;
+  width: 600px;
+}
+
+
 td {
   width: 500px;
 }
@@ -198,6 +206,10 @@ ul {
 .modal {
   color: #333366;
   font-family: 'Avenir';
+}
+
+.modal .modal-footer .btn-flat {
+  margin: 85px 0 -40px 0;
 }
 
 .modal-footer {

@@ -98,6 +98,7 @@
   $sitesModalTable.hide();
 
   $('.add').click(function() {
+    console.log('clicked');
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
     if ($urlInput.val() === ""  || !$websiteInput.val() === "") {
