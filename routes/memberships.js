@@ -61,6 +61,22 @@ router.post('/users/sites/:siteId', checkAuth, (req, res, next) => {
     });
 });
 
+router.patch('/memberships',  (req, res, next) => {
+  const user_id = req.body.user_id;
+  const website_id = req.body.website_id;
+
+  knex('memberships')
+    .where('user_id', user_id)
+    .where('site_id', website_id)
+    .update({ is_upToDate: 't'})
+    .then((memberships) => {
+      res.send(memberships[0]);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 router.get('/users/sites', checkAuth, (req, res, next) => {
   const userId = req.session.userId;
 

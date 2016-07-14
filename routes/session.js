@@ -46,6 +46,7 @@ router.post('/session', (req, res, next) => {
     .then(() => {
       req.session.userId = user.id;
       res.cookie('loggedIn', true);
+      res.cookie('userId', user.id);
       res.cookie('userName', user.name, { encode: String });
       res.sendStatus(200);
     })
@@ -64,6 +65,7 @@ router.delete('/session', (req, res) => {
   delete req.session.userId;
   res.clearCookie('loggedIn');
   res.clearCookie('userName');
+  res.clearCookie('userId');
   res.clearCookie('firstTime');
   res.sendStatus(200);
 });

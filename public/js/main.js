@@ -7,6 +7,8 @@
 
   var websiteGetUrl;
 
+  var websitePatchUrl;
+
   window.COOKIES = {};
   document.cookie.split('; ').forEach((prop) => {
     const propKey = prop.split('=')[0];
@@ -20,6 +22,8 @@
   }
 
   var userName = window.COOKIES.userName;
+
+  var userId = window.COOKIES.userId;
 
   $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down hello">' + userName.toUpperCase() + '</h4>');
 
@@ -132,7 +136,7 @@
       for (var step of steps) {
         $('.instructionsList').append('<li>' + step + '</li>');
       }
-      $('.instructionsList').append('<p><input type="checkbox" id="test5" /><label for="test5">Check this box after you have updated your address at ' + website_name + '.</label></p>');
+      $('.instructionsList').append('<p><input type="checkbox" id="confirm" /><label for="confirm">Check this box after you have updated your address at ' + website_name + '.</label></p>');
     });
 
     $xhr.fail(function() {
@@ -141,8 +145,29 @@
   };
 
   var changeSiteStatus = function() {
+    if ($('#confirm').prop('checked')) {
+      var dataPatch = { user_id: userId, website_id };
 
+      var $xhr = $.ajax({
+        method: 'PATCH',
+        url: '/memberships',
+        contentType: 'application/json',
+        data: JSON.stringify(dataPatch)
+      });
+
+      $xhr.done(function(membership) {
+        checkSiteStatus();
+      });
+
+      $xhr.fail(function() {
+        console.log('Butthole');
+      });
+    }
   };
+
+  $('.done').click(function() {
+    changeSiteStatus();
+  });
 
   checkSiteStatus();
 })();
