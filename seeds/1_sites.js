@@ -78,6 +78,11 @@ exports.seed = function(knex) {
       id: 13,
       website_name: 'US Bank',
       url: 'www.usbank.com',
+      },
+      {
+      id: 14,
+      website_name: "Bank of America",
+      url: 'www.bankofamerica.com'
       }
     ])
   })
