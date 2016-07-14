@@ -89,7 +89,7 @@
       if (memberships.length < 1) {
         $('.firstSection').empty();
         $('.firstSection').append(
-          '<div class="col s12"><p>Add some sites that you keep your address on<br> and we\'ll help you keep them up to date!</p></div>'
+          '<div class="col s12"><p>Use the menu to add sites to your profile and we\'ll<br>help you keep them up to date!</p></div>'
         );
       }
 
