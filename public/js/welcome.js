@@ -18,10 +18,62 @@
   // }
 
   var userName = window.COOKIES.userName;
+  var userId = window.COOKIES.userId;
+
+  var selectedRecs = [];
+  var siteIds = [];
 
   $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down">HELLO ' + userName.toUpperCase() + '</h4>');
 
   $('.medSmall').prepend('<h4 class="brand-logo center user userSm hide-on-large-only">HELLO ' + userName.toUpperCase() + '</h4>');
+
+  var getSitesAjax = function() {
+    for (var rec of selectedRecs) {
+      var dataRecSites = {
+        website_name: rec
+      };
+
+      var websiteString = '/sites/' + rec;
+
+      var $xhr = $.ajax ({
+        method: 'GET',
+        url: websiteString,
+        contentType: 'application/json',
+        data: JSON.stringify(dataRecSites)
+      });
+
+      $xhr.done(function(site) {
+        siteIds.push(site.id)
+        postNewMembershipAjax();
+      });
+
+      $xhr.fail(function() {
+        console.log("Whole Butt");
+      })
+    }
+  };
+
+  var postNewMembershipAjax = function() {
+    for (var siteId of siteIds) {
+      var dataNewMembership = {
+        user_id: userId,
+        site_id: siteId
+      };
+
+      var websiteString = '/memberships/' + siteId;
+
+      var $xhr = $.ajax ({
+        method:'POST',
+        url: websiteString,
+        contentType: 'application/json',
+        data: JSON.stringify(dataNewMembership)
+      });
+
+      $xhr.done(function() {
+        console.log("done")
+      });
+    };
+  };
 
 
   $(document).ready(function(){
@@ -69,7 +121,6 @@
   });
 
 
-var selectedRecs = []
 
 /* --- Welcome page save click -- */
 $('#next').click(function() {
@@ -78,6 +129,7 @@ $('#next').click(function() {
       selectedRecs.push($('span').eq(x).text())
     };
   };
+  getSitesAjax();
 });
 
 $(document).ready(function() {
