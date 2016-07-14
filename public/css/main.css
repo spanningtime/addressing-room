@@ -11,15 +11,13 @@ form {
 h4 {
   color: #333366;
   font-family: 'Avenir';
+  padding-top: 40px;
+  text-align: center;
 }
 
 h5 {
   display: inline-block;
   font-size: 1.3rem;
-}
-
-.hello {
-  font-family: 'Courier New';
 }
 
 li {
@@ -78,6 +76,12 @@ ul {
   border-bottom: 2px solid #5c6bc0;
 }
 
+.add {
+  position: absolute;
+  margin: 15px 0 0 25px;
+  cursor: pointer;
+}
+
 .brand-logo {
   margin: 4px 0 0 0;
 }
@@ -89,6 +93,14 @@ ul {
 .btn-floating:hover {
   background-color: rgba(92, 107, 192, 0.6);
   color: white;
+}
+
+.customDesc {
+  color: #333366;
+  font-family: "Avenir";
+  font-size: 1rem;
+  margin: 2px 17% 14px 17%;
+  text-align: center;
 }
 
 .dropdown-button {
@@ -136,6 +148,10 @@ ul {
   font-family: 'Courier New';
   position: relative;
   top: 100px;
+}
+
+.hello {
+  font-family: 'Courier New';
 }
 
 .instruct {
