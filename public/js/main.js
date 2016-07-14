@@ -23,7 +23,7 @@
 
   var userName = window.COOKIES.userName;
 
-  var userId = window.COOKIES.userId;
+  var userId = parseInt(window.COOKIES.userId);
 
   $('.nav-wrapper').prepend('<h4 class="brand-logo left user hide-on-med-and-down hello">' + userName.toUpperCase() + '</h4>');
 
