@@ -47,18 +47,17 @@
 
       $xhr.done(function(site) {
         counter += 1;
-        siteIds.push(site.id)
+        siteIds.push(site.id);
 
         if (counter === selectedRecs.length) {
           postNewMembershipAjax();
-        }
+        };
       });
 
-      $xhr.fail(function() {
-        console.log("Whole Butt");
-      })
-    }
-    console.log(selectedRecs);
+      $xhr.fail(function(err) {
+        console.log(err);
+      });
+    };
   };
 
   var postNewMembershipAjax = function() {
@@ -110,14 +109,13 @@
         counter += 1;
         if (counter = addedSites.length) {
           postNewMembershipAjax();
-        }
+        };
       });
 
-      $xhr.fail(function() {
-        console.log("fail");
+      $xhr.fail(function(err) {
+        console.log(err);
       });
     };
-
   };
 
 
@@ -160,7 +158,7 @@
       }
     }
     console.log(addedSites);
-  })
+  });
 
 
   var recs = ['Bank of America', 'Amazon', 'Comcast', 'Seattle City Light', 'Ebay', 'Seattle Times', 'AT&T', 'University of Washington', 'Allstate', 'BECU', 'Etsy', 'Geico', 'Wells Fargo', 'Key Bank', 'US Bank'];
