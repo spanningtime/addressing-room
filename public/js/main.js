@@ -289,5 +289,39 @@
     changeSiteStatus();
   });
 
+  // var updateUserAddress = function() {
+  //
+  //   var dataUpdateAddress = {
+  //     name: $('#name').val(),
+  //     address_1: $('#address_1').val(),
+  //     address_2: $('#address_2').val(),
+  //     city: $('#city').val(),
+  //     state: $('#states :selected').text(),
+  //     zip: $('#zip').val(),
+  //   }
+  //
+  //   console.log(dataUpdateAddress);
+  //
+  //   var patchAddressUrl = '/users/' + userId;
+  //
+  //   var $xhr = $.ajax({
+  //     method: 'PATCH',
+  //     url: patchAddressUrl,
+  //     data: dataUpdateAddress
+  //   });
+  //
+  //   $xhr.done(function() {
+  //     checkSiteStatus();
+  //   });
+  //
+  //   $xhr.fail(function(err) {
+  //     console.error(err);
+  //   });
+  // };
+  //
+  // $('.update').click(function() {
+  //   updateUserAddress();
+  // });
+
   checkSiteStatus();
 })();

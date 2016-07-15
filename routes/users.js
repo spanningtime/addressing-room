@@ -32,7 +32,6 @@ router.post('/users', ev(validations.post), (req, res, next) => {
       return bcrypt.hash(password, 12);
     })
     .then((hashed_password) => {
-      console.log(hashed_password);
       return knex('users').insert({
         email, hashed_password, name, address_1, address_2, city, state, zip
       }, '*');
@@ -51,10 +50,7 @@ router.post('/users', ev(validations.post), (req, res, next) => {
         if (err) {
           throw err;
         }
-
-        console.log(body);
       });
-      console.log(usersInserted);
       req.session.userId = usersInserted[0].id;
       res.cookie('firstTime', true);
       res.cookie('userId', usersInserted[0].id);
@@ -66,5 +62,18 @@ router.post('/users', ev(validations.post), (req, res, next) => {
       next(err);
     });
 });
+
+// router.patch('/users/:id', (req, res, next) => {
+//   knex('users')
+//     .update(req.body, '*')
+//     .where('id', req.params.id)
+//     .then((user) => {
+//       console.log(user)
+//       res.send(users[0])
+//     })
+//     .catch((err) => {
+//       next(err);
+//     });
+// });
 
 module.exports = router;
