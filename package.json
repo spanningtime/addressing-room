@@ -4,8 +4,10 @@
   "description": "Q2 project for g28",
   "main": "server.js",
   "scripts": {
-    "heroku-postbuild": "knex migrate:latest",
     "knex": "knex",
+    "heroku-postbuild": "knex migrate:latest",
+    "nf": "nf start",
+    "nodemon": "nodemon server.js",
     "test": "mocha"
   },
   "repository": {
