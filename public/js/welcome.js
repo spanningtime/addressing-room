@@ -88,9 +88,14 @@
 
   var postCustomSitesAjax = function() {
     var counter = 0;
+
+
     for (var site of addedSites) {
+      var siteName = site.name.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
       var dataNewCustomSite = {
-        website_name: site.name,
+        website_name: siteName,
         url: site.url
       };
       var $xhr = $.ajax({
