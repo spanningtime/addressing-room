@@ -60,7 +60,7 @@
         return Materialize.toast('User already exists. Please login.', 3000);
       }
 
-      Materialize.toast('User could not be created. Please try again.', 3000);
+      Materialize.toast('Password must contain at least 8 charachters. Please try again.', 3000);
     });
   };
 

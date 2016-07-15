@@ -20,7 +20,7 @@ exports.up = function(knex) {
     table.string('city')
       .notNullable()
       .defaultTo('');
-    table.specificType('state', 'char(2)')
+    table.string('state')
       .notNullable()
       .defaultTo('');
     table.string('zip')
