@@ -13,9 +13,9 @@
     window.location.href = '/index.html';
   }
 
-  // if (!window.COOKIES.firstTime) {
-  //   window.location.href = '/main.html';
-  // }
+  if (!window.COOKIES.firstTime) {
+    window.location.href = '/main.html';
+  }
 
   var userName = window.COOKIES.userName;
   var userId = window.COOKIES.userId;
@@ -55,7 +55,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -79,7 +79,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -113,7 +113,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -130,7 +130,6 @@
   $sitesModalTable.hide();
 
   $('.add').click(function() {
-    console.log('clicked');
     var $urlInput = $('#url').children().eq(0);
     var $websiteInput = $('#website-name').children().eq(0);
     if ($urlInput.val() === ""  || !$websiteInput.val() === "") {
@@ -157,7 +156,6 @@
         postCustomSitesAjax();
       }
     }
-    console.log(addedSites);
   });
 
 
@@ -223,8 +221,8 @@ $(document).ready(function() {
       window.location.href = '/index.html';
     });
 
-    $xhr.fail(function() {
-      console.log('Session Ended');
+    $xhr.fail(function(err) {
+      console.error(err);;
     });
   };
 

@@ -87,7 +87,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -112,7 +112,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -120,8 +120,11 @@
   var postCustomSitesAjax = function() {
     var counter = 0;
     for (var site of addedSites) {
+      var siteName = site.name.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
       var dataNewCustomSite = {
-        website_name: site.name,
+        website_name: siteName,
         url: site.url
       };
       var $xhr = $.ajax({
@@ -140,7 +143,7 @@
       });
 
       $xhr.fail(function(err) {
-        console.log(err);
+        console.error(err);
       });
     };
   };
@@ -159,7 +162,6 @@
         postCustomSitesAjax();
       }
     }
-    console.log(addedSites);
   });
 
   $('.add').click(function() {
@@ -185,8 +187,8 @@
       window.location.href = '/index.html';
     });
 
-    $xhr.fail(function() {
-      console.log('Session Ended');
+    $xhr.fail(function(err) {
+      console.err(err);
     });
   };
 
@@ -259,8 +261,8 @@
       $('.instructionsList').append('<p><input type="checkbox" id="confirm" /><label for="confirm">Check this box after you have updated your address at ' + website_name + '.</label></p>');
     });
 
-    $xhr.fail(function() {
-      console.log('Bad');
+    $xhr.fail(function(err) {
+      console.error(err);
     });
   };
 
@@ -279,8 +281,8 @@
         checkSiteStatus();
       });
 
-      $xhr.fail(function() {
-        console.log('Butthole');
+      $xhr.fail(function(err) {
+        console.error(err);
       });
     }
   };

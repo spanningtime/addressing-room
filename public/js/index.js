@@ -86,7 +86,8 @@
       window.location.href = '/main.html';
     });
 
-    $xhr.fail(function() {
+    $xhr.fail(function(err) {
+      console.error(err);
       Materialize.toast('Login information is invalid.', 3000);
     });
   };
