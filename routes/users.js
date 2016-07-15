@@ -63,17 +63,17 @@ router.post('/users', ev(validations.post), (req, res, next) => {
     });
 });
 
-// router.patch('/users/:id', (req, res, next) => {
-//   knex('users')
-//     .update(req.body, '*')
-//     .where('id', req.params.id)
-//     .then((user) => {
-//       console.log(user)
-//       res.send(users[0])
-//     })
-//     .catch((err) => {
-//       next(err);
-//     });
-// });
+router.patch('/users/:id', (req, res, next) => {
+  knex('users')
+    .update(req.body, '*')
+    .where('id', req.params.id)
+    .then((users) => {
+      res.cookie('userName', users[0].name, { encode: String });
+      res.send(users[0])
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 module.exports = router;
