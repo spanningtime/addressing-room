@@ -4,5 +4,10 @@ module.exports = {
     'ryansobol/es6',
     'ryansobol/jquery',
     'ryansobol/materialize'
-  ]
+  ],
+  rules: {
+    'no-undef': 0,
+    'new-cap': 0,
+    'camelcase': 0,
+  }
 };
