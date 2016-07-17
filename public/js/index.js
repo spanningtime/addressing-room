@@ -2,34 +2,33 @@
   'use strict';
 
   window.COOKIES = {};
-  document.cookie.split('; ').forEach((prop) => {
-    const propKey = prop.split('=')[0];
-    const propValue = prop.split('=')[1];
+  document.cookie.split('; ').forEach(function(prop) {
+    var propKey = prop.split('=')[0];
+    var propValue = prop.split('=')[1];
 
     window.COOKIES[propKey] = propValue;
   });
 
-  if(window.COOKIES.loggedIn) {
+  if (window.COOKIES.loggedIn) {
     window.location.href = '/main.html';
   }
 
   $('.modal-trigger').leanModal({
     dismissible: true,
-    opacity: .2
+    opacity: 0.2
   });
 
-
-  var states = ['AL', 'AK', 'AZ', 'AR', 'CA',	'CO',	'CT',	'DE',	'FL',	'GA',	'HI',	'ID',	'IL',	'IN',	'IA',	'KS',	'KY',	'LA',	'ME',	'MD',	'MA',	'MI',	'MN',	'MS',	'MO',	'MT',	'NE',	'NV',	'NH',	'NJ',	'NM',	'NY',	'NC',	'ND',	'OH',	'OK',	'OR',	'PA',	'RI',	'SC',	'SD',	'TN',	'TX',	'UT',	'VT',	'VA',	'WA',	'WV',	'WI',	'WY']
+  var states = ['AL', 'AK', 'AZ', 'AR', 'CA',	'CO',	'CT',	'DE',	'FL',	'GA',	'HI',	'ID',	'IL',	'IN',	'IA',	'KS',	'KY',	'LA',	'ME',	'MD',	'MA',	'MI',	'MN',	'MS',	'MO',	'MT',	'NE',	'NV',	'NH',	'NJ',	'NM',	'NY',	'NC',	'ND',	'OH',	'OK',	'OR',	'PA',	'RI',	'SC',	'SD',	'TN',	'TX',	'UT',	'VT',	'VA',	'WA',	'WV',	'WI',	'WY'];
 
   $('.modal-trigger').click(function() {
-    var i = 1;
-    for (var state of states) {
-      $('#states').append('<option value="' + i + '">' + state + '</option>');
-      i += 1;
+    var x = 1;
+
+    for (var i = 0; i < states.length; i++) {
+      $('#states').append('<option value="' + x + '">' + states[i] + '</option>');
+      x += 1;
     }
     $('select').material_select();
   });
-
 
   var registerAjax = function() {
     var dataRegister = {
@@ -55,7 +54,6 @@
     });
 
     $xhr.fail(function() {
-
       if ($xhr.status === 409) {
         return Materialize.toast('User already exists. Please login.', 3000);
       }
@@ -86,8 +84,7 @@
       window.location.href = '/main.html';
     });
 
-    $xhr.fail(function(err) {
-      console.error(err);
+    $xhr.fail(function() {
       Materialize.toast('Login information is invalid.', 3000);
     });
   };
@@ -96,7 +93,7 @@
     var email = $('#emailLog').val().trim();
     var password = $('#passwordLog').val();
 
-    if(!email) {
+    if (!email) {
       return Materialize.toast('Please enter an email.', 2000);
     }
 
