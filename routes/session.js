@@ -1,36 +1,39 @@
-'use strict';
+(function() {
+  'use strict';
 
-const express = require('express');
-const router = express.Router();
-const knex = require('../knex');
-const bcrypt = require('bcrypt-as-promised');
+  const express = require('express');
+  const router = express.Router();
+  const knex = require('../knex');
+  const bcrypt = require('bcrypt-as-promised');
 
+  router.post('/session', (req, res, next) => {
+    const { email, password } = req.body;
 
-router.post('/session', (req, res, next) => {
-  const { email, password } = req.body;
+    if (!email || email.trim() === '') {
+      const err = new Error('Email must not be blank');
 
-  if (!email || email.trim() === '') {
-    const err = new Error('Email must not be blank');
-    err.statusCode = 400;
+      err.statusCode = 400;
 
-    return next(err);
-  }
+      return next(err);
+    }
 
-  if (!password || password.trim() === '') {
-    const err = new Error('Password must not be blank');
-    err.statusCode = 400;
+    if (!password || password.trim() === '') {
+      const err = new Error('Password must not be blank');
 
-    return next(err);
-  }
+      err.statusCode = 400;
 
-  let user;
+      return next(err);
+    }
 
-  knex('users')
+    let user;
+
+    knex('users')
     .where('email', email)
     .first()
     .then((row) => {
       if (!row) {
-        const err = new Error('Unauthorized')
+        const err = new Error('Unauthorized');
+
         err.status = 401;
 
         throw err;
@@ -41,7 +44,6 @@ router.post('/session', (req, res, next) => {
       const hashed_password = user.hashed_password;
 
       return bcrypt.compare(password, hashed_password);
-
     })
     .then(() => {
       req.session.userId = user.id;
@@ -52,6 +54,7 @@ router.post('/session', (req, res, next) => {
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {
       const err = new Error('Unauthorized');
+
       err.status = 401;
 
       return next(err);
@@ -59,15 +62,16 @@ router.post('/session', (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-});
+  });
 
-router.delete('/session', (req, res) => {
-  delete req.session.userId;
-  res.clearCookie('loggedIn');
-  res.clearCookie('userName');
-  res.clearCookie('userId');
-  res.clearCookie('firstTime');
-  res.sendStatus(200);
-});
+  router.delete('/session', (req, res) => {
+    delete req.session.userId;
+    res.clearCookie('loggedIn');
+    res.clearCookie('userName');
+    res.clearCookie('userId');
+    res.clearCookie('firstTime');
+    res.sendStatus(200);
+  });
 
-module.exports = router;
+  module.exports = router;
+})();
